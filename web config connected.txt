@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+
+<configuration>
+<connectionStrings>
+  <add name="praccon" connectionString="Data Source=DESKTOP-4OBNJEG\MSSQL;Initial Catalog=praccon;User ID=sa;Password=Bhar@t1973" providerName="system.Data.Sqlclient"/> 
+</connectionStrings>
+  <appSettings>
+     <add key="validationSettings:unobtrusiveValidationMode" value="None"/>
+  </appSettings>
+ 
+    <system.web>
+      <compilation debug="true" targetFramework="4.6" />
+      <httpRuntime targetFramework="4.6" />
+    </system.web>
+
+</configuration>

@@ -1,0 +1,71 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <asp:Label ID="lblrno" runat="server" Text="Enter Roll No."></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+         <asp:TextBox ID="txtrno" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtrno" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="btnsearch" runat="server"  Text="Find"  />
+        <br />
+        <br />
+     
+        <asp:Label ID="lblname" runat="server" Text="Enter Student Name"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtname" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <br />
+        <br />
+        <asp:Label ID="Label1" runat="server" Text="Enter Class"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="class_id" DataValueField="class_name" >
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:praccon %>" ProviderName="<%$ ConnectionStrings:praccon.ProviderName %>" SelectCommand="SELECT * FROM [class]"></asp:SqlDataSource>
+        <br />
+        <br />
+        <asp:Label ID="lblcourse" runat="server" Text="Enter Course"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="course_id" DataValueField="course_name">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:praccon %>" ProviderName="<%$ ConnectionStrings:praccon.ProviderName %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
+        <br />
+        <br />
+         <asp:Label ID="lblemail" runat="server" Text="Enter Email ID"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="lblmob" runat="server" Text="Enter Mobile No."></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtmob_no" runat="server"></asp:TextBox>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="RangeValidator" ControlToValidate="txtmob_no" ForeColor="Red" MaximumValue="11" MinimumValue="11">*</asp:RangeValidator>
+        <br />
+        <br /> 
+         <asp:Label ID="Label2" runat="server" Text="Enter dob."></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtdob" runat="server"></asp:TextBox>
+        <br />
+        <br /> 
+         <asp:Label ID="Label3" runat="server" Text="CV"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <br />
+        <br />
+           <asp:Button ID="btnsave" runat="server" Text="Save" OnClick="btnsave_Click"  />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="Button2" runat="server" Text="Update" OnClick="Button2_Click"  />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="btndelete" runat="server" Text="Delete" />
+        <br />
+        <br />
+        <br />
+    
+        <asp:GridView ID="GridView1" runat="server"  Width="632px">
+        </asp:GridView>
+    
+    </div>
+    </form>
+</body>
+</html>
